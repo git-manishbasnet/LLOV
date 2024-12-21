@@ -7,9 +7,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors([
-    "*","https://llov-frontend.vercel.app/"
-]));
+app.use(cors({
+  origin: 'https://llov-frontend.vercel.app', // Replace with your frontend domain
+  methods: 'GET, POST', // Allow only certain methods if needed
+  allowedHeaders: 'Content-Type', // Allow specific headers
+}));
 app.use(express.json());
 
 // Log the Mongo URI to check if it's being read properly
