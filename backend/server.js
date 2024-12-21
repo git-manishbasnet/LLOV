@@ -72,7 +72,7 @@ app.use(cors({
   origin: 'https://llov-frontend.vercel.app', // Allow only this origin
   methods: 'GET, POST, OPTIONS', // Allow GET, POST, and OPTIONS methods
   allowedHeaders: 'Content-Type', // Allow specific headers
-  credentials: true, // Allow cookies if needed
+  credentials: true, // If using cookies or authentication tokens
 }));
 
 // Middleware to parse incoming JSON
@@ -121,9 +121,9 @@ app.get("/api/entries", async (req, res) => {
   }
 });
 
-// Handle OPTIONS requests (for preflight)
+// Handle OPTIONS requests (preflight)
 app.options("*", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "https://llov-frontend.vercel.app"); // or '*' for all origins
+  res.header("Access-Control-Allow-Origin", "https://llov-frontend.vercel.app"); // Specify your frontend domain
   res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.header("Access-Control-Allow-Headers", "Content-Type");
   res.sendStatus(200); // Send a successful response for OPTIONS requests
