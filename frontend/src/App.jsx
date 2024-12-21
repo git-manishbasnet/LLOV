@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
@@ -65,6 +64,7 @@ const App = () => {
                         onChange={(e) => setYourName(e.target.value)}
                         placeholder="Enter your name"
                         className="w-full px-4 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                        required
                       />
                     </div>
                     <div className="mb-6">
@@ -77,6 +77,7 @@ const App = () => {
                         onChange={(e) => setPartnerName(e.target.value)}
                         placeholder="Enter partner's name"
                         className="w-full px-4 py-3 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+                        required
                       />
                     </div>
                     <button
@@ -128,4 +129,3 @@ const App = () => {
 };
 
 export default App;
-
