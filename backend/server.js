@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors([
-    "*","https://love-calculator-manish.vercel.app"
+    "*","https://llov-frontend.vercel.app/"
 ]));
 app.use(express.json());
 
