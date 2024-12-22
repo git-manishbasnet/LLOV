@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use("*",cors({
-  origin: ['http://localhost:5173','https://llov-frontend.vercel.app'], // Frontend domains
+  origin: ['http://localhost:5173','https://llov-frontend.vercel.app','https://llov-frontend.vercel.app/data'], // Frontend domains
   methods: ['GET, POST'],
   allowedHeaders: ['Content-Type'],
 }));
