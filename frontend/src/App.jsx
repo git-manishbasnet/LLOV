@@ -19,25 +19,14 @@ const App = () => {
     console.log("Data being sent to backend:", newEntry); // Log the data
 
     try {
-<<<<<<< HEAD
-      const response = await axios.post("https://llov-git-manishbasnets-projects.vercel.app/api/entries", newEntry);
+       const response = await axios.post("https://llov-git-manishbasnets-projects.vercel.app/api/entries", newEntry);
       
       // const response = await axios.post("http://localhost:5000/api/entries", newEntry);
       console.log("Backend response:", response.data);
 
       // Fetch the updated entries after saving the new entry
-      const entriesResponse = await axios.get("https://llov-git-manishbasnets-projects.vercel.app/api/entries");
-      // const entriesResponse = await axios.get("http://localhost:5000/api/entries");
-=======
-       const response = await axios.post("https://llov-git-manishbasnets-projects.vercel.app/api/entries", newEntry);
-      
-      //const response = await axios.post("http://localhost:5000/api/entries", newEntry);
-      console.log("Backend response:", response.data);
-
-      // Fetch the updated entries after saving the new entry
        const entriesResponse = await axios.get("https://llov-git-manishbasnets-projects.vercel.app/api/entries");
-      //const entriesResponse = await axios.get("http://localhost:5000/api/entries");
->>>>>>> 770224dd68aaf824c20b9abd90d10956b0bb278d
+      // const entriesResponse = await axios.get("http://localhost:5000/api/entries");
       console.log("Fetched entries:", entriesResponse.data);
 
       setEntries(entriesResponse.data);
