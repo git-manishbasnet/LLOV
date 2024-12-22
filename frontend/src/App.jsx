@@ -19,14 +19,14 @@ const App = () => {
     console.log("Data being sent to backend:", newEntry); // Log the data
 
     try {
-      // const response = await axios.post("https://llov-git-manishbasnets-projects.vercel.app/api/entries", newEntry);
+      const response = await axios.post("https://llov-git-manishbasnets-projects.vercel.app/api/entries", newEntry);
       
-      const response = await axios.post("http://localhost:5000/api/entries", newEntry);
+      // const response = await axios.post("http://localhost:5000/api/entries", newEntry);
       console.log("Backend response:", response.data);
 
       // Fetch the updated entries after saving the new entry
-      // const entriesResponse = await axios.get("https://llov-git-manishbasnets-projects.vercel.app/api/entries");
-      const entriesResponse = await axios.get("http://localhost:5000/api/entries");
+      const entriesResponse = await axios.get("https://llov-git-manishbasnets-projects.vercel.app/api/entries");
+      // const entriesResponse = await axios.get("http://localhost:5000/api/entries");
       console.log("Fetched entries:", entriesResponse.data);
 
       setEntries(entriesResponse.data);
@@ -123,9 +123,9 @@ const App = () => {
         </Routes>
         <p className="mt-6 text-white text-sm opacity-80">Made with ❤️ for fun!</p>
         <p className="mt-6 text-white text-sm opacity-80">Designed By Manish Basnet</p>
-        {/* <Link to="/data" className="block mt-4 text-blue-500 hover:underline">
+        <Link to="/data" className="block mt-4 text-blue-500 hover:underline">
           View Collected Data
-        </Link> */}
+        </Link>
       </div>
     </Router>
   );
