@@ -12,8 +12,8 @@ const DataPage = () => {
   useEffect(() => {
     const fetchEntries = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/entries");
-          //  const response = await axios.get("https://llov.vercel.app/api/entries");
+        // const response = await axios.get("http://localhost:5000/api/entries");
+           const response = await axios.get("https://llov.vercel.app/api/entries");
    
         setEntries(response.data); // Set the fetched entries into state
       } catch (error) {
